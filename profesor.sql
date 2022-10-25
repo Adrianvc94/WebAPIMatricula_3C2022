@@ -11,8 +11,8 @@ GO
 CREATE TABLE [dbo].[Profesor](
 	[Codigo] [int] NOT NULL,
 	[Identificacion] [varchar](30) NOT NULL,
-	[Nombre] [varchar](100) NOT NULL,
-	[Correo] [varchar](50) NOT NULL,
+	[NombreCompleto] [varchar](100) NOT NULL,
+	[CorreoElectronico] [varchar](50) NOT NULL,
 	[Estado] [varchar](10) NOT NULL,
 	[CodigoColegiatura] [int] NOT NULL,
  CONSTRAINT [PK_Profesor] PRIMARY KEY CLUSTERED 
