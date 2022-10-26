@@ -1,7 +1,7 @@
 USE [MatriculaULACIT_3C2022]
 GO
 
-/****** Object:  Table [dbo].[Colegiatura]    Script Date: 10/24/2022 4:02:43 AM ******/
+/****** Object:  Table [dbo].[Colegiatura]    Script Date: 10/25/2022 6:39:12 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -9,7 +9,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[Colegiatura](
-	[Codigo] [int] NOT NULL,
+	[Codigo] [int] IDENTITY(1,1) NOT NULL,
 	[Nombre] [varchar](50) NOT NULL,
 	[Facultado] [varchar](50) NOT NULL,
 	[GradoAcademico] [varchar](25) NOT NULL,
@@ -21,3 +21,5 @@ CREATE TABLE [dbo].[Colegiatura](
 ) ON [PRIMARY]
 GO
 
+
+   
