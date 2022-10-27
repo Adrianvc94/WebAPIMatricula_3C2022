@@ -1,7 +1,7 @@
 USE [MatriculaULACIT_3C2022]
 GO
 
-/****** Object:  Table [dbo].[Error]    Script Date: 10/24/2022 4:02:58 AM ******/
+/****** Object:  Table [dbo].[Error]    Script Date: 10/27/2022 4:27:55 AM ******/
 SET ANSI_NULLS ON
 GO
 

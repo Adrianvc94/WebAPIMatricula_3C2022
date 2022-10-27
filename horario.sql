@@ -1,7 +1,7 @@
 USE [MatriculaULACIT_3C2022]
 GO
 
-/****** Object:  Table [dbo].[Horario]    Script Date: 10/26/2022 4:04:02 PM ******/
+/****** Object:  Table [dbo].[Horario]    Script Date: 10/27/2022 4:27:36 AM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -9,7 +9,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[Horario](
-	[Codigo] [int] IDENTITY(1,1) NOT NULL,
+	[Codigo] [int] NOT NULL,
 	[Dia] [varchar](15) NOT NULL,
 	[HoraInicio] [varchar](7) NOT NULL,
 	[HoraFin] [varchar](7) NOT NULL,
@@ -21,5 +21,4 @@ CREATE TABLE [dbo].[Horario](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-
 

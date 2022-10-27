@@ -1,7 +1,7 @@
 USE [MatriculaULACIT_3C2022]
 GO
 
-/****** Object:  Table [dbo].[Profesor]    Script Date: 10/26/2022 4:06:55 PM ******/
+/****** Object:  Table [dbo].[Profesor]    Script Date: 10/27/2022 4:26:51 AM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -9,10 +9,10 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[Profesor](
-	[Codigo] [int] IDENTITY(1,1) NOT NULL,
+	[Codigo] [int] NOT NULL,
 	[Identificacion] [varchar](30) NOT NULL,
-	[NombreCompleto] [varchar](100) NOT NULL,
-	[CorreoElectronico] [varchar](50) NOT NULL,
+	[Nombre] [varchar](100) NOT NULL,
+	[Correo] [varchar](50) NOT NULL,
 	[Estado] [varchar](10) NOT NULL,
 	[CodigoColegiatura] [int] NOT NULL,
  CONSTRAINT [PK_Profesor] PRIMARY KEY CLUSTERED 
