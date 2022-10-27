@@ -34,13 +34,6 @@ CREATE TABLE [dbo].[Curso](
 ) ON [PRIMARY]
 GO
 
-ALTER TABLE [dbo].[Curso]  WITH CHECK ADD  CONSTRAINT [FK_Curso_Horario] FOREIGN KEY([CodigoHorario])
-REFERENCES [dbo].[Horario] ([Codigo])
-GO
-
-ALTER TABLE [dbo].[Curso] CHECK CONSTRAINT [FK_Curso_Horario]
-GO
-
 CREATE TABLE [dbo].[Error](
 	[Codigo] [int] IDENTITY(1,1) NOT NULL,
 	[CodigoUsuario] [int] NOT NULL,
@@ -56,13 +49,6 @@ CREATE TABLE [dbo].[Error](
 	[Codigo] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-
-ALTER TABLE [dbo].[Error]  WITH CHECK ADD  CONSTRAINT [FK_Error_Usuario] FOREIGN KEY([CodigoUsuario])
-REFERENCES [dbo].[Usuario] ([Codigo])
-GO
-
-ALTER TABLE [dbo].[Error] CHECK CONSTRAINT [FK_Error_Usuario]
 GO
 
 CREATE TABLE [dbo].[Estudiante](
@@ -105,6 +91,61 @@ CREATE TABLE [dbo].[Matricula](
 ) ON [PRIMARY]
 GO
 
+CREATE TABLE [dbo].[Nota](
+	[Codigo] [int] IDENTITY(1,1) NOT NULL,
+	[CodigoCurso] [int] NOT NULL,
+	[CodigoEstudiante] [int] NOT NULL,
+	[CodigoProfesor] [int] NOT NULL,
+	[Nota] [numeric](5, 2) NOT NULL,
+	[Estado] [varchar](15) NOT NULL
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Profesor](
+	[Codigo] [int] IDENTITY(1,1) NOT NULL,
+	[Identificacion] [varchar](30) NOT NULL,
+	[NombreCompleto] [varchar](100) NOT NULL,
+	[CorreoElectronico] [varchar](50) NOT NULL,
+	[Estado] [varchar](10) NOT NULL,
+	[CodigoColegiatura] [int] NOT NULL,
+ CONSTRAINT [PK_Profesor] PRIMARY KEY CLUSTERED 
+(
+	[Codigo] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Usuario](
+	[Codigo] [int] IDENTITY(1,1) NOT NULL,
+	[Identificacion] [varchar](30) NOT NULL,
+	[NombreCompleto] [varchar](100) NOT NULL,
+	[CorreoElectronico] [varchar](50) NOT NULL,
+	[NumeroTelefono] [varchar](20) NOT NULL,
+	[Username] [varchar](20) NOT NULL,
+	[PasswordHash] [varbinary](max) NOT NULL,
+	[PasswordSalt] [varbinary](max) NOT NULL,
+	[Estado] [varchar](10) NOT NULL,
+ CONSTRAINT [PK_Usuario] PRIMARY KEY CLUSTERED 
+(
+	[Codigo] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Curso]  WITH CHECK ADD  CONSTRAINT [FK_Curso_Horario] FOREIGN KEY([CodigoHorario])
+REFERENCES [dbo].[Horario] ([Codigo])
+GO
+
+ALTER TABLE [dbo].[Curso] CHECK CONSTRAINT [FK_Curso_Horario]
+GO
+
+ALTER TABLE [dbo].[Error]  WITH CHECK ADD  CONSTRAINT [FK_Error_Usuario] FOREIGN KEY([CodigoUsuario])
+REFERENCES [dbo].[Usuario] ([Codigo])
+GO
+
+ALTER TABLE [dbo].[Error] CHECK CONSTRAINT [FK_Error_Usuario]
+GO
+
 ALTER TABLE [dbo].[Matricula]  WITH CHECK ADD  CONSTRAINT [FK_Matricula_Curso] FOREIGN KEY([CodigoCurso])
 REFERENCES [dbo].[Curso] ([Codigo])
 GO
@@ -124,16 +165,6 @@ REFERENCES [dbo].[Usuario] ([Codigo])
 GO
 
 ALTER TABLE [dbo].[Matricula] CHECK CONSTRAINT [FK_Matricula_Usuario]
-GO
-
-CREATE TABLE [dbo].[Nota](
-	[Codigo] [int] IDENTITY(1,1) NOT NULL,
-	[CodigoCurso] [int] NOT NULL,
-	[CodigoEstudiante] [int] NOT NULL,
-	[CodigoProfesor] [int] NOT NULL,
-	[Nota] [numeric](5, 2) NOT NULL,
-	[Estado] [varchar](15) NOT NULL
-) ON [PRIMARY]
 GO
 
 ALTER TABLE [dbo].[Nota]  WITH CHECK ADD  CONSTRAINT [FK_Nota_Curso] FOREIGN KEY([CodigoCurso])
@@ -157,40 +188,9 @@ GO
 ALTER TABLE [dbo].[Nota] CHECK CONSTRAINT [FK_Nota_Profesor]
 GO
 
-CREATE TABLE [dbo].[Profesor](
-	[Codigo] [int] IDENTITY(1,1) NOT NULL,
-	[Identificacion] [varchar](30) NOT NULL,
-	[NombreCompleto] [varchar](100) NOT NULL,
-	[CorreoElectronico] [varchar](50) NOT NULL,
-	[Estado] [varchar](10) NOT NULL,
-	[CodigoColegiatura] [int] NOT NULL,
- CONSTRAINT [PK_Profesor] PRIMARY KEY CLUSTERED 
-(
-	[Codigo] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-
 ALTER TABLE [dbo].[Profesor]  WITH CHECK ADD  CONSTRAINT [FK_Profesor_Colegiatura] FOREIGN KEY([CodigoColegiatura])
 REFERENCES [dbo].[Colegiatura] ([Codigo])
 GO
 
 ALTER TABLE [dbo].[Profesor] CHECK CONSTRAINT [FK_Profesor_Colegiatura]
-GO
-
-CREATE TABLE [dbo].[Usuario](
-	[Codigo] [int] IDENTITY(1,1) NOT NULL,
-	[Identificacion] [varchar](30) NOT NULL,
-	[NombreCompleto] [varchar](100) NOT NULL,
-	[CorreoElectronico] [varchar](50) NOT NULL,
-	[NumeroTelefono] [varchar](20) NOT NULL,
-	[Username] [varchar](20) NOT NULL,
-	[PasswordHash] [varbinary](max) NOT NULL,
-	[PasswordSalt] [varbinary](max) NOT NULL,
-	[Estado] [varchar](10) NOT NULL,
- CONSTRAINT [PK_Usuario] PRIMARY KEY CLUSTERED 
-(
-	[Codigo] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
