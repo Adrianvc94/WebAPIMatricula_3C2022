@@ -15,7 +15,7 @@ AS BEGIN
 	SELECT 
 			Codigo,
             Nombre,
-            Facultado,
+            Facultad,
             GradoAcademico,
             Acreditada
 	FROM Colegiatura

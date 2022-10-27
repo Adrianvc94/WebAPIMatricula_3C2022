@@ -11,7 +11,7 @@ GO
 CREATE PROCEDURE [dbo].[Editar_Colegiatura]
 	@Codigo INT, 
 	@Nombre VARCHAR(50),
-    @Facultado VARCHAR(50),
+    @Facultad VARCHAR(50),
     @GradoAcademico VARCHAR(25),
     @Acreditada VARCHAR(4)
 
@@ -22,7 +22,7 @@ AS BEGIN
 		UPDATE Colegiatura
 			SET 
              Nombre = @Nombre, 
-             Facultado = @Facultado,
+             Facultad = @Facultad,
              GradoAcademico = @GradoAcademico,
              Acreditada = @Acreditada
 		FROM Colegiatura 
@@ -30,7 +30,7 @@ AS BEGIN
 
 		SELECT 
 		 Nombre,
-            Facultado,
+            Facultad,
             GradoAcademico,
             Acreditada
 	FROM Colegiatura

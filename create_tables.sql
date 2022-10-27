@@ -11,7 +11,7 @@ GO
 CREATE TABLE [dbo].[Colegiatura](
 	[Codigo] [int] IDENTITY(1,1) NOT NULL,
 	[Nombre] [varchar](50) NOT NULL,
-	[Facultado] [varchar](50) NOT NULL,
+	[Facultad] [varchar](50) NOT NULL,
 	[GradoAcademico] [varchar](25) NOT NULL,
 	[Acreditada] [varchar](4) NOT NULL,
  CONSTRAINT [PK_Colegiatura] PRIMARY KEY CLUSTERED 

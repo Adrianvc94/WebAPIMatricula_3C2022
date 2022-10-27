@@ -9,17 +9,17 @@ GO
 
 CREATE PROCEDURE [dbo].[Agregar_Colegiatura]
     @Nombre VARCHAR(50),
-    @Facultado VARCHAR(50),
+    @Facultad VARCHAR(50),
     @GradoAcademico VARCHAR(25),
     @Acreditada VARCHAR(4)
 	
 AS BEGIN 
 	SET NOCOUNT ON;		
 
-	INSERT INTO Colegiatura(Nombre, Facultado, GradoAcademico, Acreditada)
+	INSERT INTO Colegiatura(Nombre, Facultad, GradoAcademico, Acreditada)
 	SELECT 
         @Nombre,
-        @Facultado,
+        @Facultad,
         @GradoAcademico,
         @Acreditada	
 				
