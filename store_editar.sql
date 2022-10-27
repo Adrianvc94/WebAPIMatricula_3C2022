@@ -198,8 +198,8 @@ GO
 CREATE PROCEDURE [dbo].[Editar_Profesor]
     @Codigo int,
     @Identificacion varchar(30),
-	@Nombre varchar(100),
-	@Correo varchar(50),
+	@NombreCompleto varchar(100),
+	@CorreoElectronico varchar(50),
 	@Estado varchar(10),
 	@CodigoColegiatura int
 
