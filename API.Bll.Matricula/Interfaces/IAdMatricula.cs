@@ -8,7 +8,7 @@ namespace API.Bll.Matricula.Interfaces
 {
     public interface IAdMatricula
     {
-        API.Dto.Matricula.Salida.VerTodasMatriculas VerTodasMatriculas();
+        API.Dto.Matricula.Salida.VerTodosMatriculas VerTodosMatriculas();
         API.Dto.Matricula.Salida.VerDetalleMatricula VerDetalleMatricula(API.Dto.Matricula.Entrada.VerDetalleMatricula pInformacion);
         API.Dto.Matricula.Salida.AgregarMatricula AgregarMatricula(API.Dto.Matricula.Entrada.AgregarMatricula pInformacion);
         API.Dto.Matricula.Salida.EditarMatricula EditarMatricula(API.Dto.Matricula.Entrada.EditarMatricula pInformacion);

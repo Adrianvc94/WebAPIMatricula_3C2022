@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace API.Dto.Matricula.Entrada
+namespace API.Dto.Colegiatura.Entrada
 {
-    public class VerTodosMatriculas : General.EntradaAPI
+    public class VerTodosColegiaturas : General.EntradaAPI
     {
     }
 }

@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace API.Dto.Matricula.Salida
 {
-    public class VerTodasMatriculas : Dto.General.RespuestaAPI
+    public class VerTodosMatriculas : Dto.General.RespuestaAPI
     {
          public List<DatosMatricula> ListaMatriculas { get; set; }
 
 
 
-        public VerTodasMatriculas()
+        public VerTodosMatriculas()
         {
             ListaMatriculas = new List<DatosMatricula>();
         }
