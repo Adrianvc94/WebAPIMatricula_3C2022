@@ -1,7 +1,9 @@
 ﻿using API.Bll.Error.Interfaces;
 using API.Bll.Estudiante.Interfaces;
+using API.Bll.Nota.Interfaces;
 using API.Dal.Error;
 using API.Dal.Estudiante;
+using API.Dal.Nota;
 using API.Dto.General;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
@@ -90,6 +92,7 @@ namespace WebAPIMatricula_3C2022
 
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAdEstudiante, AdEstudiante>();
+            services.AddScoped<IAdNota, AdNota>();
             services.AddScoped<IAdError, AdError>();
 
 
