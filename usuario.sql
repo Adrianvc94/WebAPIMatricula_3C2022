@@ -1,4 +1,4 @@
-USE [MatriculaULACIT_3C2022]
+USE [ProyectoULACIT_3C2022]
 GO
 
 /****** Object:  Table [dbo].[Usuario]    Script Date: 10/27/2022 4:26:38 AM ******/
