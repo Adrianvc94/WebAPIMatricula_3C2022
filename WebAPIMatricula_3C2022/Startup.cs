@@ -1,6 +1,8 @@
-﻿using API.Bll.Error.Interfaces;
+﻿using API.Bll.Colegiatura.Interfaces;
+using API.Bll.Error.Interfaces;
 using API.Bll.Estudiante.Interfaces;
 using API.Bll.Nota.Interfaces;
+using API.Dal.Colegiatura;
 using API.Dal.Error;
 using API.Dal.Estudiante;
 using API.Dal.Nota;
@@ -93,6 +95,8 @@ namespace WebAPIMatricula_3C2022
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAdEstudiante, AdEstudiante>();
             services.AddScoped<IAdNota, AdNota>();
+            services.AddScoped<IAdColegiatura, AdColegiatura>();
+
             services.AddScoped<IAdError, AdError>();
 
 

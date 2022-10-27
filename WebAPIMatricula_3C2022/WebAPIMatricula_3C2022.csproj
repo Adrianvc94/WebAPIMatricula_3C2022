@@ -11,10 +11,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\API.Bll.Colegiatura\API.Bll.Colegiatura.csproj" />
     <ProjectReference Include="..\API.Bll.Error\API.Bll.Error.csproj" />
     <ProjectReference Include="..\API.Bll.Estudiante\API.Bll.Estudiante.csproj" />
     <ProjectReference Include="..\API.Bll.Matricula\API.Bll.Matricula.csproj" />
     <ProjectReference Include="..\API.Bll.Nota\API.Bll.Nota.csproj" />
+    <ProjectReference Include="..\API.Dal.Colegiatura\API.Dal.Colegiatura.csproj" />
     <ProjectReference Include="..\API.Dal.Error\API.Dal.Error.csproj" />
     <ProjectReference Include="..\API.Dal.Estudiante\API.Dal.Estudiante.csproj" />
     <ProjectReference Include="..\API.Dal.General\API.Dal.General.csproj" />
