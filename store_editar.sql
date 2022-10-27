@@ -210,8 +210,8 @@ AS BEGIN
 		UPDATE Profesor
 			SET 
             Identificacion = @Identificacion,
-             Nombre = @Nombre,
-             Correo = @Correo, 
+             NombreCompleto = @NombreCompleto,
+             CorreoElectronico = @CorreoElectronico, 
              Estado = @Estado,
              CodigoColegiatura = @CodigoColegiatura
 		FROM Profesor 
@@ -219,8 +219,8 @@ AS BEGIN
 
 		SELECT 
             Identificacion,
-             Nombre,
-            Correo,
+            NombreCompleto,
+            CorreoElectronico,
             Estado,
             CodigoColegiatura
 	FROM Profesor

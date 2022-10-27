@@ -173,17 +173,17 @@ GO
 
 CREATE PROCEDURE [dbo].[Agregar_Profesor]
     @Identificacion varchar(30),
-	@Nombre varchar(100),
-	@Correo varchar(50),
+	@NombreCompleto varchar(100),
+	@CorreoElectronico varchar(50),
 	@Estado varchar(10),
 	@CodigoColegiatura int
 AS BEGIN 
 	SET NOCOUNT ON;		
 
-	INSERT INTO Profesor(Identificacion, Nombre, Correo, Estado, CodigoColegiatura)
+	INSERT INTO Profesor(Identificacion, NombreCompleto, CorreoElectronico, Estado, CodigoColegiatura)
 	SELECT @Identificacion,
-        @Nombre,
-        @Correo,
+        @NombreCompleto,
+        @CorreoElectronico,
         @Estado,
         @CodigoColegiatura	
 	SELECT SCOPE_IDENTITY() AS Codigo

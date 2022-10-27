@@ -107,8 +107,8 @@ AS BEGIN
 	SELECT 
 			Codigo,
             Identificacion,
-             Nombre,
-            Correo,
+            NombreCompleto,
+            CorreoElectronico,
             Estado,
             CodigoColegiatura
 	FROM Profesor
