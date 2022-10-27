@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace API.Dto.Colegiatura.Entrada
 {
-    public class VerTodasColegiaturas : General.EntradaAPI
+    public class VerTodosColegiaturas : General.EntradaAPI
     {
     }
 }

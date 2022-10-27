@@ -23,10 +23,10 @@ namespace API.Dal.Colegiatura
 
 
 
-        public Dto.Colegiatura.Salida.VerTodasColegiaturas VerTodasColegiaturas()
+        public Dto.Colegiatura.Salida.VerTodosColegiaturas VerTodosColegiaturas()
         {
             IDbConnection oConexion = null;
-            API.Dto.Colegiatura.Salida.VerTodasColegiaturas resultado = new API.Dto.Colegiatura.Salida.VerTodasColegiaturas();
+            API.Dto.Colegiatura.Salida.VerTodosColegiaturas resultado = new API.Dto.Colegiatura.Salida.VerTodosColegiaturas();
 
 
 

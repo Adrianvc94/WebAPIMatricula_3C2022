@@ -36,16 +36,16 @@ namespace WebAPIMatricula_3C2022.Controllers
         }
 
         [HttpPost]
-        [Route("VerTodasNotas")]
-        public IActionResult VerTodosNotas(API.Dto.Nota.Entrada.VerTodasNotas pDatos)
+        [Route("VerTodosNotas")]
+        public IActionResult VerTodosNotas(API.Dto.Nota.Entrada.VerTodosNotas pDatos)
         {
-            API.Dto.Nota.Salida.VerTodasNotas respuesta = new API.Dto.Nota.Salida.VerTodasNotas();
+            API.Dto.Nota.Salida.VerTodosNotas respuesta = new API.Dto.Nota.Salida.VerTodosNotas();
 
 
 
             try
             {
-                respuesta = oLnNota.VerTodasNotas(pDatos);
+                respuesta = oLnNota.VerTodosNotas(pDatos);
                 return Ok(respuesta);
             }
             catch (Exception ex)

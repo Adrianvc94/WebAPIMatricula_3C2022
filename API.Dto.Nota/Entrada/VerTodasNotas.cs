@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace API.Dto.Nota.Entrada
 {
-    public class VerTodasNotas : General.EntradaAPI
+    public class VerTodosNotas : General.EntradaAPI
     {
     }
 }

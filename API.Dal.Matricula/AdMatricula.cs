@@ -25,10 +25,10 @@ namespace API.Dal.Matricula
 
 
 
-            public Dto.Matricula.Salida.VerTodasMatriculas VerTodasMatriculas()
+            public Dto.Matricula.Salida.VerTodosMatriculas VerTodosMatriculas()
             {
                 IDbConnection oConexion = null;
-                API.Dto.Matricula.Salida.VerTodasMatriculas resultado = new API.Dto.Matricula.Salida.VerTodasMatriculas();
+                API.Dto.Matricula.Salida.VerTodosMatriculas resultado = new API.Dto.Matricula.Salida.VerTodosMatriculas();
 
 
 

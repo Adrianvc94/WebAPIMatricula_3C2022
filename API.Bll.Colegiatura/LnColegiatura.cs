@@ -19,13 +19,13 @@ namespace API.Bll.Colegiatura
 
 
 
-        public API.Dto.Colegiatura.Salida.VerTodasColegiaturas VerTodasColegiaturas(Dto.Colegiatura.Entrada.VerTodasColegiaturas pInformacion)
+        public API.Dto.Colegiatura.Salida.VerTodosColegiaturas VerTodosColegiaturas(Dto.Colegiatura.Entrada.VerTodosColegiaturas pInformacion)
         {
-            API.Dto.Colegiatura.Salida.VerTodasColegiaturas respuesta = new API.Dto.Colegiatura.Salida.VerTodasColegiaturas();
+            API.Dto.Colegiatura.Salida.VerTodosColegiaturas respuesta = new API.Dto.Colegiatura.Salida.VerTodosColegiaturas();
 
             try
             {
-                respuesta = adColegiatura.VerTodasColegiaturas();
+                respuesta = adColegiatura.VerTodosColegiaturas();
             }
             catch (Exception ex)
             {

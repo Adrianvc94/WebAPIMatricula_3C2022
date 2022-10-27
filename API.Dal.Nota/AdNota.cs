@@ -24,10 +24,10 @@ namespace API.Dal.Nota
 
 
 
-        public Dto.Nota.Salida.VerTodasNotas VerTodasNotas()
+        public Dto.Nota.Salida.VerTodosNotas VerTodosNotas()
         {
             IDbConnection oConexion = null;
-            API.Dto.Nota.Salida.VerTodasNotas resultado = new API.Dto.Nota.Salida.VerTodasNotas();
+            API.Dto.Nota.Salida.VerTodosNotas resultado = new API.Dto.Nota.Salida.VerTodosNotas();
 
 
 

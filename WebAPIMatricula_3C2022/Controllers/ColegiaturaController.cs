@@ -36,16 +36,16 @@ namespace WebAPIMatricula_3C2022.Controllers
         }
 
         [HttpPost]
-        [Route("VerTodasColegiaturas")]
-        public IActionResult VerTodosColegiaturas(API.Dto.Colegiatura.Entrada.VerTodasColegiaturas pDatos)
+        [Route("VerTodosColegiaturas")]
+        public IActionResult VerTodosColegiaturas(API.Dto.Colegiatura.Entrada.VerTodosColegiaturas pDatos)
         {
-            API.Dto.Colegiatura.Salida.VerTodasColegiaturas respuesta = new API.Dto.Colegiatura.Salida.VerTodasColegiaturas();
+            API.Dto.Colegiatura.Salida.VerTodosColegiaturas respuesta = new API.Dto.Colegiatura.Salida.VerTodosColegiaturas();
 
 
 
             try
             {
-                respuesta = oLnColegiatura.VerTodasColegiaturas(pDatos);
+                respuesta = oLnColegiatura.VerTodosColegiaturas(pDatos);
                 return Ok(respuesta);
             }
             catch (Exception ex)

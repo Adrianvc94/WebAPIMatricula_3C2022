@@ -18,13 +18,13 @@ namespace API.Bll.Matricula
 
 
 
-        public API.Dto.Matricula.Salida.VerTodasMatriculas VerTodasMatriculas(Dto.Matricula.Entrada.VerTodasMatriculas pInformacion)
+        public API.Dto.Matricula.Salida.VerTodosMatriculas VerTodosMatriculas(Dto.Matricula.Entrada.VerTodosMatriculas pInformacion)
         {
-            API.Dto.Matricula.Salida.VerTodasMatriculas respuesta = new API.Dto.Matricula.Salida.VerTodasMatriculas();
+            API.Dto.Matricula.Salida.VerTodosMatriculas respuesta = new API.Dto.Matricula.Salida.VerTodosMatriculas();
 
             try
             {
-                respuesta = adMatricula.VerTodasMatriculas();
+                respuesta = adMatricula.VerTodosMatriculas();
             }
             catch (Exception ex)
             {

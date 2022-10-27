@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace API.Dto.Colegiatura.Salida
 {
-    public class VerTodasColegiaturas : General.RespuestaAPI
+    public class VerTodosColegiaturas : General.RespuestaAPI
     {
         public List<DatosColegiaturas> ListaColegiaturas { get; set; }
 
-        public VerTodasColegiaturas()
+        public VerTodosColegiaturas()
         {
             ListaColegiaturas = new List<DatosColegiaturas>();
         }

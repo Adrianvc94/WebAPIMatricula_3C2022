@@ -19,13 +19,13 @@ namespace API.Bll.Nota
 
 
 
-        public API.Dto.Nota.Salida.VerTodasNotas VerTodasNotas(Dto.Nota.Entrada.VerTodasNotas pInformacion)
+        public API.Dto.Nota.Salida.VerTodosNotas VerTodosNotas(Dto.Nota.Entrada.VerTodosNotas pInformacion)
         {
-            API.Dto.Nota.Salida.VerTodasNotas respuesta = new API.Dto.Nota.Salida.VerTodasNotas();
+            API.Dto.Nota.Salida.VerTodosNotas respuesta = new API.Dto.Nota.Salida.VerTodosNotas();
 
             try
             {
-                respuesta = adNota.VerTodasNotas();
+                respuesta = adNota.VerTodosNotas();
             }
             catch (Exception ex)
             {
