@@ -10,7 +10,7 @@ namespace API.Dto.Curso.Entrada
     {
         public string Nombre { get; set; }
         public int Creditos { get; set; }
-        public string Horario { get; set; }
+        public int CodigoHorario { get; set; }
         public string Estado { get; set; }
     }
 }

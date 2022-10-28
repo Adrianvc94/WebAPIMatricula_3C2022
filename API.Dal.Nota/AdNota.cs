@@ -39,7 +39,7 @@ namespace API.Dal.Nota
 
             try
             {
-                IDataReader objDr = manager.GetDataReader(oComando, oConexion, "dbo.Ver_Todas_Notas");
+                IDataReader objDr = manager.GetDataReader(oComando, oConexion, "dbo.Ver_Todos_Notas");
 
 
 

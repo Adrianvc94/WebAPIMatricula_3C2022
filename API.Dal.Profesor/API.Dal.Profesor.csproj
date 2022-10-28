@@ -3,7 +3,14 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\API.Bll.Profesor\API.Bll.Profesor.csproj" />
+    <ProjectReference Include="..\API.Dal.General\API.Dal.General.csproj" />
+    <ProjectReference Include="..\API.Dto.General\API.Dto.General.csproj" />
+    <ProjectReference Include="..\API.Dto.Profesor\API.Dto.Profesor.csproj" />
+  </ItemGroup>
 
 </Project>

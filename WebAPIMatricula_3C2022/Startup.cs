@@ -6,6 +6,12 @@ using API.Dal.Colegiatura;
 using API.Dal.Error;
 using API.Dal.Estudiante;
 using API.Dal.Nota;
+using API.Bll.Horario.Interfaces;
+using API.Bll.Profesor.Interfaces;
+using API.Dal.Error;
+using API.Dal.Estudiante;
+using API.Dal.Horario;
+using API.Dal.Profesor;
 using API.Dto.General;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
@@ -14,8 +20,8 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using WebAPI;
 using WebAPI.Services;
-
-
+using API.Bll.Curso.Interfaces;
+using API.Dal.Curso;
 
 namespace WebAPIMatricula_3C2022
 {
@@ -91,12 +97,14 @@ namespace WebAPIMatricula_3C2022
             #endregion
 
 
-
+          
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAdEstudiante, AdEstudiante>();
             services.AddScoped<IAdNota, AdNota>();
             services.AddScoped<IAdColegiatura, AdColegiatura>();
-
+            services.AddScoped<IAdCurso, AdCurso>();
+            services.AddScoped<IAdHorario, AdHorario>();
+            services.AddScoped<IAdProfesor, AdProfesor>();
             services.AddScoped<IAdError, AdError>();
 
 

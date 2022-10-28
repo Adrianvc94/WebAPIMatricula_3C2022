@@ -3,7 +3,14 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\API.Bll.Horario\API.Bll.Horario.csproj" />
+    <ProjectReference Include="..\API.Dal.General\API.Dal.General.csproj" />
+    <ProjectReference Include="..\API.Dto.General\API.Dto.General.csproj" />
+    <ProjectReference Include="..\API.Dto.Horario\API.Dto.Horario.csproj" />
+  </ItemGroup>
 
 </Project>

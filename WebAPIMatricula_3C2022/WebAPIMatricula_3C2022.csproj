@@ -12,16 +12,22 @@
 
   <ItemGroup>
     <ProjectReference Include="..\API.Bll.Colegiatura\API.Bll.Colegiatura.csproj" />
+    <ProjectReference Include="..\API.Bll.Curso\API.Bll.Curso.csproj" />
     <ProjectReference Include="..\API.Bll.Error\API.Bll.Error.csproj" />
     <ProjectReference Include="..\API.Bll.Estudiante\API.Bll.Estudiante.csproj" />
+    <ProjectReference Include="..\API.Bll.Horario\API.Bll.Horario.csproj" />
     <ProjectReference Include="..\API.Bll.Matricula\API.Bll.Matricula.csproj" />
     <ProjectReference Include="..\API.Bll.Nota\API.Bll.Nota.csproj" />
     <ProjectReference Include="..\API.Dal.Colegiatura\API.Dal.Colegiatura.csproj" />
+    <ProjectReference Include="..\API.Bll.Profesor\API.Bll.Profesor.csproj" />
+    <ProjectReference Include="..\API.Dal.Curso\API.Dal.Curso.csproj" />
     <ProjectReference Include="..\API.Dal.Error\API.Dal.Error.csproj" />
     <ProjectReference Include="..\API.Dal.Estudiante\API.Dal.Estudiante.csproj" />
     <ProjectReference Include="..\API.Dal.General\API.Dal.General.csproj" />
+    <ProjectReference Include="..\API.Dal.Horario\API.Dal.Horario.csproj" />
     <ProjectReference Include="..\API.Dal.Matricula\API.Dal.Matricula.csproj" />
     <ProjectReference Include="..\API.Dal.Nota\API.Dal.Nota.csproj" />
+    <ProjectReference Include="..\API.Dal.Profesor\API.Dal.Profesor.csproj" />
     <ProjectReference Include="..\API.Dto.Error\API.Dto.Error.csproj" />
     <ProjectReference Include="..\API.Dto.Estudiante\API.Dto.Estudiante.csproj" />
     <ProjectReference Include="..\API.Dto.General\API.Dto.General.csproj" />

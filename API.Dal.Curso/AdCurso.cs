@@ -53,7 +53,7 @@ namespace API.Dal.Curso
                         dato.Codigo = Convert.ToInt32(objDr["Codigo"].ToString());
                         dato.Nombre = objDr["Nombre"].ToString();
                         dato.Creditos = Convert.ToInt32(objDr["Creditos"].ToString());
-                        dato.Horario = objDr["Horario"].ToString();
+                        dato.CodigoHorario = Convert.ToInt32(objDr["CodigoHorario"].ToString());
                         dato.Estado = objDr["Estado"].ToString();
 
 
@@ -102,7 +102,7 @@ namespace API.Dal.Curso
                         resultado.Codigo = Convert.ToInt32(objDr["Codigo"].ToString());
                         resultado.Nombre = objDr["Nombre"].ToString();
                         resultado.Creditos = Convert.ToInt32(objDr["Creditos"].ToString());
-                        resultado.Horario = objDr["Horario"].ToString();
+                        resultado.CodigoHorario = Convert.ToInt32(objDr["CodigoHorario"].ToString());
                         resultado.Estado = objDr["Estado"].ToString();
 
                     }
@@ -138,7 +138,7 @@ namespace API.Dal.Curso
 
                     oComando.Parameters.Add(manager.GetParametro("@Nombre", pInformacion.Nombre));
                     oComando.Parameters.Add(manager.GetParametro("@Creditos", pInformacion.Creditos));
-                    oComando.Parameters.Add(manager.GetParametro("@Horario", pInformacion.Horario));
+                    oComando.Parameters.Add(manager.GetParametro("@CodigoHorario", pInformacion.CodigoHorario));
                     oComando.Parameters.Add(manager.GetParametro("@Estado", pInformacion.Estado));
 
 
@@ -224,7 +224,7 @@ namespace API.Dal.Curso
                     oComando.Parameters.Add(manager.GetParametro("@Codigo", pInformacion.Codigo));
                     oComando.Parameters.Add(manager.GetParametro("@Nombre", pInformacion.Nombre));
                     oComando.Parameters.Add(manager.GetParametro("@Creditos", pInformacion.Creditos));
-                    oComando.Parameters.Add(manager.GetParametro("@Horario", pInformacion.Horario));
+                    oComando.Parameters.Add(manager.GetParametro("@CodigoHorario", pInformacion.CodigoHorario));
                     oComando.Parameters.Add(manager.GetParametro("@Estado", pInformacion.Estado));
 
 
@@ -238,7 +238,7 @@ namespace API.Dal.Curso
                         resultado.Codigo = Convert.ToInt32(objDr["Codigo"].ToString());
                         resultado.Nombre = objDr["Nombre"].ToString();
                         resultado.Creditos = Convert.ToInt32(objDr["Creditos"].ToString());
-                        resultado.Horario = objDr["Horario"].ToString();
+                        resultado.CodigoHorario = Convert.ToInt32(objDr["CodigoHorario"].ToString());
                         resultado.Estado = objDr["Estado"].ToString();
                     }
 
