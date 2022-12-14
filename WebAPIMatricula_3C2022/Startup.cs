@@ -8,8 +8,6 @@ using API.Dal.Estudiante;
 using API.Dal.Nota;
 using API.Bll.Horario.Interfaces;
 using API.Bll.Profesor.Interfaces;
-using API.Dal.Error;
-using API.Dal.Estudiante;
 using API.Dal.Horario;
 using API.Dal.Profesor;
 using API.Dto.General;
