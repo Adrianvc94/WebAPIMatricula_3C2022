@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using UI.WebMatricula3C2022.Logica;
 
@@ -10,7 +11,7 @@ namespace UI.WebMatricula3C2022.Controllers
 
         LnColegiatura lnColegiatura = new LnColegiatura();
 
-
+        [Authorize]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public async Task<IActionResult> Index()
         {
@@ -60,6 +61,8 @@ namespace UI.WebMatricula3C2022.Controllers
             return View(listaColegiatura.ListaColegiaturas);
         }
 
+        [Authorize]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         [HttpPost]
         public async Task<JsonResult> AgregarColegiatura(Models.Colegiatura.Entrada.AgregarColegiatura agregarColegiatura)
         {
@@ -76,7 +79,8 @@ namespace UI.WebMatricula3C2022.Controllers
             }
         }
 
-
+        [Authorize]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         [HttpPost]
         public async Task<JsonResult> EditarColegiatura(Models.Colegiatura.Entrada.EditarColegiatura editarColegiatura)
         {
@@ -93,7 +97,8 @@ namespace UI.WebMatricula3C2022.Controllers
             }
         }
 
-
+        [Authorize]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         [HttpPost]
         public async Task<JsonResult> EliminarColegiatura(Models.Colegiatura.Entrada.EliminarColegiatura eliminarColegiatura)
         {
@@ -110,7 +115,8 @@ namespace UI.WebMatricula3C2022.Controllers
             }
         }
 
-
+        [Authorize]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         [HttpPost]
         public async Task<JsonResult> VerDetalleColegiatura(Models.Colegiatura.Entrada.VerDetalleColegiatura veDetalleColegiatura)
         {

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using UI.WebMatricula3C2022.Logica;
 
@@ -8,7 +9,7 @@ namespace UI.WebMatricula3C2022.Controllers
     {
         LnEstudiante lnEstudiante = new LnEstudiante();
 
-
+        [Authorize]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public async Task<IActionResult> Index()
         {
@@ -58,6 +59,8 @@ namespace UI.WebMatricula3C2022.Controllers
             return View(listaEstudiante.ListaEstudiantes);
         }
 
+        [Authorize]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         [HttpPost]
         public async Task<JsonResult> AgregarEstudiante(Models.Estudiante.Entrada.AgregarEstudiante agregarEstudiante)
         {
@@ -74,7 +77,8 @@ namespace UI.WebMatricula3C2022.Controllers
             }
         }
 
-
+        [Authorize]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         [HttpPost]
         public async Task<JsonResult> EditarEstudiante(Models.Estudiante.Entrada.EditarEstudiante editarEstudiante)
         {
@@ -91,7 +95,8 @@ namespace UI.WebMatricula3C2022.Controllers
             }
         }
 
-
+        [Authorize]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         [HttpPost]
         public async Task<JsonResult> EliminarEstudiante(Models.Estudiante.Entrada.EliminarEstudiante eliminarEstudiante)
         {
@@ -108,7 +113,8 @@ namespace UI.WebMatricula3C2022.Controllers
             }
         }
 
-
+        [Authorize]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         [HttpPost]
         public async Task<JsonResult> VerDetalleEstudiante(Models.Estudiante.Entrada.VerDetalleEstudiante veDetalleEstudiante)
         {

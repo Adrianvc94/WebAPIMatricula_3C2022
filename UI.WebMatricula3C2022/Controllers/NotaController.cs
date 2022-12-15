@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using UI.WebMatricula3C2022.Logica;
 
@@ -11,17 +12,25 @@ namespace UI.WebMatricula3C2022.Controllers
         LnNota lnNota = new LnNota();
         LnEstudiante lnEstudiante = new LnEstudiante();
         LnCurso lnCurso = new LnCurso();
-        //LnProfesor lnProfesor = new LnProfesor();
+        LnProfesor lnProfesor = new LnProfesor();
 
 
+        private readonly ILogger<NotaController> _logger;
 
+        public NotaController(ILogger<NotaController> logger)
+        {
+            _logger = logger;
+        }
+
+
+        [Authorize]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public async Task<IActionResult> Index()
         {
             Models.Nota.Entrada.VerTodosNotas parametro = new Models.Nota.Entrada.VerTodosNotas();
             Models.Estudiante.Entrada.VerTodosEstudiantes paramEstudiante = new Models.Estudiante.Entrada.VerTodosEstudiantes();
             Models.Curso.Entrada.VerTodosCursos paramCurso = new Models.Curso.Entrada.VerTodosCursos();
-            //Models.Profesor.Entrada.VerTodosProfesores paramProfesor = new Models.Profesor.Entrada.VerTodosProfesores();
+            Models.Profesor.Entrada.VerTodosProfesores paramProfesor = new Models.Profesor.Entrada.VerTodosProfesores();
 
 
 
@@ -31,21 +40,12 @@ namespace UI.WebMatricula3C2022.Controllers
 
             var listaEstudiante = await lnEstudiante.VerTodosEstudiantes(paramEstudiante, usuarioActual.Token);
             var listaCurso = await lnCurso.VerTodosCursos(paramCurso, usuarioActual.Token);
-            //var LnProfesor = await lnProfesor.VerTodosProfesores(paramProfesor, usuarioActual.Token);
+            var LnProfesor = await lnProfesor.VerTodosProfesores(paramProfesor, usuarioActual.Token);
 
-            //int CodigoCurso = 2;
-
-            //var prueba5 = ((IEnumerable<UI.WebMatricula3C2022.Models.Curso.Salida.DatosCursos>)listaCurso.ListaCursos).Where(x => x.Codigo == CodigoCurso).First();
-
-            //@((IEnumerable<UI.WebMatricula3C2022.Models.Curso.Salida.DatosCursos>)listaCursos).Where(x => x.Codigo == item.Codigo).First()
-
-            //var prueba = listaCurso.ListaCursos.Where(x => x.Codigo == CodigoCurso).First();
-
-            //var pasd = listaCurso.ListaCursos[0];
-
+           
             ViewBag.Estudiantes = listaEstudiante.ListaEstudiantes;
             ViewBag.Cursos = listaCurso.ListaCursos;
-            //ViewBag.Profesores = LnProfesor.ListaProfesores;
+            ViewBag.Profesores = LnProfesor.ListaProfesores;
 
 
             ///////// GRAFICOS CHART.JS ///////////////////////////////////////////
@@ -88,6 +88,8 @@ namespace UI.WebMatricula3C2022.Controllers
             return View(listaNota.ListaNotas);
         }
 
+        [Authorize]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         [HttpPost]
         public async Task<JsonResult> AgregarNota(Models.Nota.Entrada.AgregarNota agregarNota)
         {
@@ -108,7 +110,8 @@ namespace UI.WebMatricula3C2022.Controllers
             }
         }
 
-
+        [Authorize]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         [HttpPost]
         public async Task<JsonResult> EditarNota(Models.Nota.Entrada.EditarNota editarNota)
         {
@@ -129,7 +132,8 @@ namespace UI.WebMatricula3C2022.Controllers
             }
         }
 
-
+        [Authorize]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         [HttpPost]
         public async Task<JsonResult> EliminarNota(Models.Nota.Entrada.EliminarNota eliminarNota)
         {
@@ -146,7 +150,8 @@ namespace UI.WebMatricula3C2022.Controllers
             }
         }
 
-
+        [Authorize]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         [HttpPost]
         public async Task<JsonResult> VerDetalleNota(Models.Nota.Entrada.VerDetalleNota veDetalleNota)
         {

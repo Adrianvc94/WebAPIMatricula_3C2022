@@ -1,4 +1,4 @@
-﻿@model IEnumerable<UI.WebMatricula3C2022.Models.Colegiatura.Salida.DatosColegiatura>
+﻿@model IEnumerable<UI.WebMatricula3C2022.Models.Colegiatura.Salida.DatosColegiaturas>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -65,24 +65,25 @@
 
                     <div style="margin-top: 3%">
                         <label for="exampleInputEmail1">Digite el nombre:</label>
-                        <input class="form-control" id="IDAgregarColegiaturaIdentificacion">
-                    </div>
-
-                    <div style="margin-top: 3%">
-                        <label for="exampleInputEmail1">Digite el nombre:</label>
                         <input class="form-control" id="IDAgregarColegiaturaNombre">
                     </div>
 
                     <div style="margin-top: 3%">
-                        <label for="exampleInputEmail1">Digite el correo:</label>
-                        <input class="form-control" id="IDAgregarColegiaturaCorreo">
+                        <label for="exampleInputEmail1">Digite la facultad:</label>
+                        <input class="form-control" id="IDAgregarColegiaturaFacultad">
+                    </div>
+
+             
+                    <div style="margin-top: 3%">
+                        <label for="exampleInputEmail1">Digite el grado académico:</label>
+                        <input class="form-control" id="IDAgregarColegiaturaGradoAcademico">
                     </div>
 
                     <div style="margin-top: 3%">
-                        <label for="exampleInputEmail1">Digite el estado:</label>
-                        <select id="IDAgregarColegiaturaEstado" class="select form-control">
-                            <option value="Activo" selected>Activo</option>
-                            <option value="Inactivo">Inactivo</option>
+                        <label for="exampleInputEmail1">Seleccione si está acreditada:</label>
+                        <select id="IDAgregarColegiaturaAcreditada" class="select form-control">
+                            <option value="SI" selected>Si</option>
+                            <option value="NO">No</option>
                         </select>
                     </div>
 
@@ -138,7 +139,7 @@
                 data: {
                     labels: @Html.Raw(ViewBag.Etiquetas),
                     datasets: [{
-                        label: "Colegiaturas por estado",
+                        label: "Colegiaturas acreditadas",
                         backgroundColor: @Html.Raw(ViewBag.Colores) ,
                         data: @Html.Raw(@ViewBag.Valores)
                                                             }]
@@ -146,7 +147,7 @@
                 options: {
                     title: {
                         display: true,
-                        text: 'Colegiaturas por estado'
+                        text: 'Colegiaturas acreditadas'
                     }
                 }
             });
@@ -156,7 +157,7 @@
     <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
     @section scripts
         {
-        <script src="~/Scripts/Colegiatura.js"></script>
+        <script src="~/js/Colegiatura.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>

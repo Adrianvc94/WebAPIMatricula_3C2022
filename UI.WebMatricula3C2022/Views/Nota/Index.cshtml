@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     var listaEstudiantes = ViewBag.Estudiantes;
     var listaCursos = ViewBag.Cursos;
+    var listaProfesores = ViewBag.Profesores;
 
 }
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
@@ -95,22 +96,27 @@
 
 
                     <div style="margin-top: 3%">
-                        <label for="exampleInputEmail1">Digite el código profesor:</label>
-                        <input class="form-control" id="IDAgregarNotaCodigoProfesor">
+                        <label for="IDAgregarNotaCodigoProfesor">Seleccione el profesor:</label>
+                        <select id="IDAgregarNotaCodigoProfesor" class="select form-control">
+                            @foreach (var profesor in listaProfesores)
+                            {
+                                <option value="@profesor.Codigo">@profesor.NombreCompleto</option>
+                            }
+                        </select>
                     </div>
 
 
                     <div style="margin-top: 3%">
-                        <label for="exampleInputEmail1">Digite la nota:</label>
+                        <label for="IDAgregarNota">Digite la nota:</label>
                         <input class="form-control" id="IDAgregarNota">
                     </div>
 
 
                     <div style="margin-top: 3%">
-                        <label for="exampleInputEmail1">Digite el estado:</label>
+                        <label for="IDAgregarNotaEstado">Digite el estado:</label>
                         <select id="IDAgregarNotaEstado" class="select form-control">
-                            <option value="Activo" selected>Aprovado</option>
-                            <option value="Inactivo">Reprovado</option>
+                            <option value="Aprovado" selected>Aprovado</option>
+                            <option value="Reprovado">Reprovado</option>
                         </select>
                     </div>
 
@@ -169,7 +175,7 @@
                 data: {
                     labels: @Html.Raw(ViewBag.Etiquetas),
                     datasets: [{
-                        label: "Notas por estado",
+                        label: "Notas por aprobación",
                         backgroundColor: @Html.Raw(ViewBag.Colores) ,
                         data: @Html.Raw(@ViewBag.Valores)
                                                             }]
@@ -177,7 +183,7 @@
                 options: {
                     title: {
                         display: true,
-                        text: 'Notas por estado'
+                        text: 'Notas por aprobación'
                     }
                 }
             });
