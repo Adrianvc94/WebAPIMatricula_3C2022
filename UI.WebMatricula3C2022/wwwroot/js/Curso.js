@@ -83,6 +83,7 @@
         codigoCurso = $(this).data("id");
         var verDetalle = VerDetalleCurso(codigoCurso);
 
+
     });
 
     $("a[name='btnEliminarCurso']").click(function () {
