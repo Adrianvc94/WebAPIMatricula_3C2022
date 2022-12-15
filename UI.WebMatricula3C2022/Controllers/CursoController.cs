@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using UI.WebMatricula3C2022.Logica;
 
@@ -8,7 +9,7 @@ namespace UI.WebMatricula3C2022.Controllers
     {
         LnCurso lnCurso = new LnCurso();
 
-
+        [Authorize]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public async Task<IActionResult> Index()
         {
@@ -59,6 +60,9 @@ namespace UI.WebMatricula3C2022.Controllers
         }
 
         [HttpPost]
+
+        [Authorize]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public async Task<JsonResult> AgregarCurso(Models.Curso.Entrada.AgregarCurso agregarCurso)
         {
             var usuarioActual = HttpContext.Session.GetObjectFromJson<Models.Users.User>("UsuarioActual");
@@ -76,6 +80,8 @@ namespace UI.WebMatricula3C2022.Controllers
 
 
         [HttpPost]
+        [Authorize]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public async Task<JsonResult> EditarCurso(Models.Curso.Entrada.EditarCurso editarCurso)
         {
             var usuarioActual = HttpContext.Session.GetObjectFromJson<Models.Users.User>("UsuarioActual");
@@ -93,6 +99,8 @@ namespace UI.WebMatricula3C2022.Controllers
 
 
         [HttpPost]
+        [Authorize]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public async Task<JsonResult> EliminarCurso(Models.Curso.Entrada.EliminarCurso eliminarCurso)
         {
             var usuarioActual = HttpContext.Session.GetObjectFromJson<Models.Users.User>("UsuarioActual");
@@ -110,6 +118,8 @@ namespace UI.WebMatricula3C2022.Controllers
 
 
         [HttpPost]
+        [Authorize]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public async Task<JsonResult> VerDetalleCurso(Models.Curso.Entrada.VerDetalleCurso veDetalleCurso)
         {
             var usuarioActual = HttpContext.Session.GetObjectFromJson<Models.Users.User>("UsuarioActual");

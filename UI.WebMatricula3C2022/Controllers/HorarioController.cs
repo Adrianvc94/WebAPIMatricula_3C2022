@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using UI.WebMatricula3C2022.Logica;
 
@@ -9,6 +10,7 @@ namespace UI.WebMatricula3C2022.Controllers
         LnHorario lnHorario = new LnHorario();
 
 
+        [Authorize]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public async Task<IActionResult> Index()
         {
@@ -59,6 +61,8 @@ namespace UI.WebMatricula3C2022.Controllers
         }
 
         [HttpPost]
+        [Authorize]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public async Task<JsonResult> AgregarHorario(Models.Horario.Entrada.AgregarHorario agregarHorario)
         {
             var usuarioActual = HttpContext.Session.GetObjectFromJson<Models.Users.User>("UsuarioActual");
@@ -76,6 +80,8 @@ namespace UI.WebMatricula3C2022.Controllers
 
 
         [HttpPost]
+        [Authorize]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public async Task<JsonResult> EditarHorario(Models.Horario.Entrada.EditarHorario editarHorario)
         {
             var usuarioActual = HttpContext.Session.GetObjectFromJson<Models.Users.User>("UsuarioActual");
@@ -93,6 +99,8 @@ namespace UI.WebMatricula3C2022.Controllers
 
 
         [HttpPost]
+        [Authorize]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public async Task<JsonResult> EliminarHorario(Models.Horario.Entrada.EliminarHorario eliminarHorario)
         {
             var usuarioActual = HttpContext.Session.GetObjectFromJson<Models.Users.User>("UsuarioActual");
@@ -110,6 +118,8 @@ namespace UI.WebMatricula3C2022.Controllers
 
 
         [HttpPost]
+        [Authorize]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public async Task<JsonResult> VerDetalleHorario(Models.Horario.Entrada.VerDetalleHorario veDetalleHorario)
         {
             var usuarioActual = HttpContext.Session.GetObjectFromJson<Models.Users.User>("UsuarioActual");
