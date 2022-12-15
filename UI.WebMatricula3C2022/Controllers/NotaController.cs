@@ -37,7 +37,6 @@ namespace UI.WebMatricula3C2022.Controllers
             var usuarioActual = HttpContext.Session.GetObjectFromJson<Models.Users.User>("UsuarioActual");
 
             var listaNota = await lnNota.VerTodosNotas(parametro, usuarioActual.Token);
-
             var listaEstudiante = await lnEstudiante.VerTodosEstudiantes(paramEstudiante, usuarioActual.Token);
             var listaCurso = await lnCurso.VerTodosCursos(paramCurso, usuarioActual.Token);
             var LnProfesor = await lnProfesor.VerTodosProfesores(paramProfesor, usuarioActual.Token);

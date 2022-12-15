@@ -9,15 +9,24 @@ namespace UI.WebMatricula3C2022.Controllers
     {
         LnCurso lnCurso = new LnCurso();
 
+        LnHorario lnHorario = new LnHorario();
+
         [Authorize]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public async Task<IActionResult> Index()
         {
             Models.Curso.Entrada.VerTodosCursos parametro = new Models.Curso.Entrada.VerTodosCursos();
+            Models.Horario.Entrada.VerTodosHorarios paramHorario = new Models.Horario.Entrada.VerTodosHorarios();
+
+
 
             var usuarioActual = HttpContext.Session.GetObjectFromJson<Models.Users.User>("UsuarioActual");
 
             var listaCurso = await lnCurso.VerTodosCursos(parametro, usuarioActual.Token);
+            var listaHorario = await lnHorario.VerTodosHorarios(paramHorario, usuarioActual.Token);
+
+            ViewBag.Horarios = listaHorario.ListaHorarios;
+
 
 
 

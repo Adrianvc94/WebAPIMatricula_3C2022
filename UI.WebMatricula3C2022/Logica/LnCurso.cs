@@ -4,6 +4,8 @@ namespace UI.WebMatricula3C2022.Logica
 {
     public class LnCurso
     {
+
+
         LnConsumoAPI lnConsumoAPI;
 
         public LnCurso()
