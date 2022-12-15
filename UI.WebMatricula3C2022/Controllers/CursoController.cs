@@ -25,21 +25,21 @@ namespace UI.WebMatricula3C2022.Controllers
 
             var random = new Random();
 
-            var etiquetas = new List<string>();
+            var etiquetas = new List<int>();
             var colores = new List<string>();
             var valores = new List<string>();
 
-            foreach (var estado in listaCurso.ListaCursos.GroupBy(e => e.Estado)
+            foreach (var credito in listaCurso.ListaCursos.GroupBy(e => e.Creditos)
                 .Select(group => new
                 {
-                    Estado = group.Key,
+                    Credito = group.Key,
                     Cantidad = group.Count()
-                }).OrderBy(x => x.Estado))
+                }).OrderBy(x => x.Credito))
             {
                 string color = String.Format("#{0:X6}", random.Next(0x1000000));
 
-                etiquetas.Add(estado.Estado);
-                valores.Add(estado.Cantidad.ToString());
+                etiquetas.Add(credito.Credito);
+                valores.Add(credito.Cantidad.ToString());
                 colores.Add(color);
             }
 
