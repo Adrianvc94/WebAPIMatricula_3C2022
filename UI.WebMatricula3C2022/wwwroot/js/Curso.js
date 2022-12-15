@@ -30,7 +30,7 @@
                     data: {
                         creditos: document.getElementById("IDAgregarCursoCreditos").value,
                         nombre: document.getElementById("IDAgregarCursoNombre").value,
-                        codigoHorario: document.getElementById("IDAgregarCursoHorario").value,
+                        codigoHorario: document.getElementById("IDAgregarCursoCodigoHorario").value,
                         estado: document.getElementById("IDAgregarCursoEstado").value
 
                     },
@@ -55,7 +55,7 @@
                         codigo: document.getElementById("IDAgregarCursoCodigo").value,
                         creditos: document.getElementById("IDAgregarCursoCreditos").value,
                         nombre: document.getElementById("IDAgregarCursoNombre").value,
-                        codigoHorario: document.getElementById("IDAgregarCursoHorario").value,
+                        codigoHorario: document.getElementById("IDAgregarCursoCodigoHorario").value,
                         estado: estadoSelect
                     },
                     async: true,
@@ -139,12 +139,12 @@ function limpiarCampos() {
     document.getElementById("IDAgregarCursoCodigo").value = "";
     document.getElementById("IDAgregarCursoCreditos").value = "";
     document.getElementById("IDAgregarCursoNombre").value = "";
-    document.getElementById("IDAgregarCursoHorario").value = "";
+    document.getElementById("IDAgregarCursoCodigoHorario").value = "";
     document.getElementById("IDAgregarCursoEstado").value = "";
 
     $("IDAgregarCursoCreditos").css('border', '1px solid #ced4da');
     $("IDAgregarCursoNombre").css('border', '1px solid #ced4da');
-    $("IDAgregarCursoHorario").css('border', '1px solid #ced4da');
+    $("IDAgregarCursoCodigoHorario").css('border', '1px solid #ced4da');
     $("IDAgregarCursoEstado").css('border', '1px solid #ced4da');
 }
 
@@ -154,7 +154,7 @@ function validarCamposCurso() {
     var bandera = true;
     var agregarCursoCreditos = document.getElementById("IDAgregarCursoCreditos").value;
     var agregarCursoNombre = document.getElementById("IDAgregarCursoNombre").value;
-    var agregarCursoHorario = document.getElementById("IDAgregarCursoHorario").value;
+    var agregarCursoHorario = document.getElementById("IDAgregarCursoCodigoHorario").value;
     var agregarCursoEstado = document.getElementById("IDAgregarCursoEstado").value;
 
     if (agregarCursoCreditos == "") {
@@ -172,10 +172,10 @@ function validarCamposCurso() {
     }
 
     if (agregarCursoHorario == "") {
-        $("#IDAgregarCursoHorario").css("border", "1px solid red");
+        $("#IDAgregarCursoCodigoHorario").css("border", "1px solid red");
         bandera = false;
     } else {
-        $('#IDAgregarCursoHorario').css('border', '1px solid #ced4da');
+        $('#IDAgregarCursoCodigoHorario').css('border', '1px solid #ced4da');
     }
 
     if (agregarCursoCreditos == "") {
@@ -183,6 +183,13 @@ function validarCamposCurso() {
         bandera = false;
     } else {
         $('#IDAgregarCursoCreditos').css('border', '1px solid #ced4da');
+    }
+
+    if (agregarCursoEstado == "") {
+        $("#IDAgregarCursoEstado").css("border", "1px solid red");
+        bandera = false;
+    } else {
+        $('#IDAgregarCursoEstado').css('border', '1px solid #ced4da');
     }
 
     return bandera;
@@ -204,7 +211,7 @@ function VerDetalleCurso(codigo) {
         success: function (response) {
             document.getElementById("IDAgregarCursoEstado").value = response.estado;
             document.getElementById("IDAgregarCursoNombre").value = response.nombre;
-            document.getElementById("IDAgregarCursoHorario").value = response.codigoHorario;
+            document.getElementById("IDAgregarCursoCodigoHorario").value = response.codigoHorario;
             document.getElementById("IDAgregarCursoCreditos").value = response.creditos;
             document.getElementById("IDAgregarCursoCodigo").value = response.codigo;
             $('#modalAgregarCurso').modal('show');

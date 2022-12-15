@@ -30,8 +30,8 @@
                     data: {
                         horaInicio: document.getElementById("IDAgregarHorarioInicio").value,
                         horaFin: document.getElementById("IDAgregarHorarioFin").value,
-                        codigoHorario: document.getElementById("IDAgregarHorarioDia").value,
-                        sede: document.getElementById("IDAgregarHorarioSede").value
+                        dia: document.getElementById("IDAgregarHorarioDia").value,
+                        sede: document.getElementById("IDAgregarHorarioSede").value,
                         aula: document.getElementById("IDAgregarHorarioAula").value
 
                     },
@@ -56,7 +56,7 @@
                         codigo: document.getElementById("IDAgregarHorarioCodigo").value,
                         horaInicio: document.getElementById("IDAgregarHorarioInicio").value,
                         horaFin: document.getElementById("IDAgregarHorarioFin").value,
-                        codigoHorario: document.getElementById("IDAgregarHorarioDia").value,
+                        dia: document.getElementById("IDAgregarHorarioDia").value,
                         aula: document.getElementById("IDAgregarHorarioAula").value,
                         sede: document.getElementById("IDAgregarHorarioSede").value,
                     },
@@ -158,7 +158,7 @@ function validarCamposHorario() {
     var bandera = true;
     var agregarHorariohoraInicio = document.getElementById("IDAgregarHorarioInicio").value;
     var agregarHorariohoraFin = document.getElementById("IDAgregarHorarioFin").value;
-    var agregarHorarioHorario = document.getElementById("IDAgregarHorarioDia").value;
+    var agregarHorarioDia = document.getElementById("IDAgregarHorarioDia").value;
     var agregarHorariosede = document.getElementById("IDAgregarHorarioSede").value;
     var agregarHorarioAula = document.getElementById("IDAgregarHorarioAula").value;
 
@@ -176,7 +176,7 @@ function validarCamposHorario() {
         $('#IDAgregarHorarioFin').css('border', '1px solid #ced4da');
     }
 
-    if (agregarHorarioHorario == "") {
+    if (agregarHorarioDia == "") {
         $("#IDAgregarHorarioDia").css("border", "1px solid red");
         bandera = false;
     } else {
@@ -210,7 +210,7 @@ function VerDetalleHorario(codigo) {
             document.getElementById("IDAgregarHorarioSede").value = response.sede;
             document.getElementById("IDAgregarHorarioAula").value = response.aula;
             document.getElementById("IDAgregarHorarioFin").value = response.horaFin;
-            document.getElementById("IDAgregarHorarioDia").value = response.codigoHorario;
+            document.getElementById("IDAgregarHorarioDia").value = response.dia;
             document.getElementById("IDAgregarHorarioInicio").value = response.horaInicio;
             document.getElementById("IDAgregarHorarioCodigo").value = response.codigo;
             $('#modalAgregarHorario').modal('show');
