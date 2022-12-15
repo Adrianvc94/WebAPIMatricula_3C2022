@@ -29,17 +29,17 @@ namespace UI.WebMatricula3C2022.Controllers
             var colores = new List<string>();
             var valores = new List<string>();
 
-            foreach (var estado in listaHorario.ListaHorarios.GroupBy(e => e.Dia)
+            foreach (var dia in listaHorario.ListaHorarios.GroupBy(e => e.Dia)
                 .Select(group => new
                 {
-                    Estado = group.Key,
+                    Dia = group.Key,
                     Cantidad = group.Count()
-                }).OrderBy(x => x.Estado))
+                }).OrderBy(x => x.Dia))
             {
                 string color = String.Format("#{0:X6}", random.Next(0x1000000));
 
-                etiquetas.Add(estado.Estado);
-                valores.Add(estado.Cantidad.ToString());
+                etiquetas.Add(dia.Dia);
+                valores.Add(dia.Cantidad.ToString());
                 colores.Add(color);
             }
 
